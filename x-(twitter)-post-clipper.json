@@ -1,0 +1,49 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "X (Twitter) Post",
+	"behavior": "create",
+	"noteContentFormat": "# {{title}}\n{{content}}",
+	"properties": [
+		{
+			"name": "分类",
+			"value": "[[摘录]]",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "作者",
+			"value": "@{{url|split:\\\"/\\\"|slice:3,-2}}",
+			"type": "text"
+		},
+		{
+			"name": "发布时间",
+			"value": "{{published}}",
+			"type": "date"
+		},
+		{
+			"name": "创建时间",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "img",
+			"value": "{{selector:img[alt=\\\"Image\\\"]?src|first}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "tweets",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://x.com",
+		"https://twitter.com"
+	],
+	"noteNameFormat": "@{{url|split:\"/\"|slice:3,-2}} on {{published|date:\"YYYY-MM-DD_HH-mm-ss\"}}",
+	"path": "Clippings"
+}
