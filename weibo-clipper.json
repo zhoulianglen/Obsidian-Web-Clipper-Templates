@@ -1,0 +1,53 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Weibo",
+	"behavior": "create",
+	"noteContentFormat": "# {{title}}\n\n{{selectorHtml:.wbpro-feed-content|markdown}}",
+	"properties": [
+		{
+			"name": "分类",
+			"value": "[[摘录]]",
+			"type": "text"
+		},
+		{
+			"name": "标题",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "作者",
+			"value": "{{selector:a[usercard] span}}",
+			"type": "multitext"
+		},
+		{
+			"name": "发布时间",
+			"value": "{{selector:a[class*=\\\"time\\\"]}}",
+			"type": "date"
+		},
+		{
+			"name": "创建时间",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "摘要",
+			"value": "{{selector:.detail_wbtext_4YneR, .wbpro-feed-content}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "微博",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://weibo.com"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings"
+}
