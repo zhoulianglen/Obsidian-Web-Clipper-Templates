@@ -1,0 +1,54 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "ChatGPT 默认",
+	"behavior": "create",
+	"noteContentFormat": "{{selectorHtml:article[data-testid*=\"conversation-turn\"]|replace:\"/<svg.*?svg>/g\":\"### ChatGPT\\:\"|join:\"\\n\\n\"|markdown|replace:(\"\\\\###\":\"###\", \"##### You said\": \"### You:\")}}\n",
+	"properties": [
+		{
+			"name": "分类",
+			"value": "[[AI 对话]]",
+			"type": "text"
+		},
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "作者",
+			"value": "ChatGPT",
+			"type": "multitext"
+		},
+		{
+			"name": "发布时间",
+			"value": "{{published}}",
+			"type": "date"
+		},
+		{
+			"name": "创建时间",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "摘要",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "AI对话/ChatGPT",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://chatgpt.com/share",
+		"https://chatgpt.com/c"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings"
+}
