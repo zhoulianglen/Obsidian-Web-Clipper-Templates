@@ -1,0 +1,53 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Gemini",
+	"behavior": "create",
+	"noteContentFormat": "{{selectorHtml:*:is(user-query, model-response message-content) | join:\"\" | replace:(\"<message-content\":\"★Gemini said<message-content\" , \"<user-query \":\"★You said<user-query \") | markdown | blockquote | replace:(\"> \\n> ★Gemini said\":\"\\n> [!gemini]- Gemini 回复\" , \"> ★You said\":\"\\n> [!faq]- 你说\") }}",
+	"properties": [
+		{
+			"name": "分类",
+			"value": "[[AI 对话]]",
+			"type": "text"
+		},
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "作者",
+			"value": "Gemini",
+			"type": "multitext"
+		},
+		{
+			"name": "发布时间",
+			"value": "{{published}}",
+			"type": "date"
+		},
+		{
+			"name": "创建时间",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "摘要",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "AI对话/Gemini",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://gemini.google.com"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings"
+}
