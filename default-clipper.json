@@ -1,0 +1,51 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Default",
+	"behavior": "create",
+	"noteContentFormat": "{{selectorHtml:article, main, [class*=\"article\"], [class*=\"content\"]|replace:\"/<div[^>]*class=['\\\"][^'\\\"]*dd-audio-player[^>]*>[\\s\\S]*?<\\/div>/g\":\"\"|replace:\"/<div[^>]*class=['\\\"][^'\\\"]*audio-tips[^>]*>[\\s\\S]*?<\\/div>/g\":\"\"|replace:\"/<div[^>]*class=['\\\"][^'\\\"]*elite-add-to-note[^>]*>[\\s\\S]*?<\\/div>/g\":\"\"|replace:\"/<div[^>]*class=['\\\"][^'\\\"]*header-2[^'\\\"]*['\\\"][^>]*>([\\s\\S]*?)<\\/div>/g\":\"<h2>$1</h2>\"|replace:\"/<(span|font|strong|em)[^>]*style=['\\\"][^'\\\"]*(rgb\\(\\s*255\\s*,\\s*107\\s*,\\s*0\\s*\\)|#ff6[ab]0[0-1])[\\^'\\\"]*['\\\"][^>]*>([\\s\\S]*?)<\\/\\1>/gi\":\"==$3==\"|markdown}}",
+	"properties": [
+		{
+			"name": "分类",
+			"value": "[[摘录]]",
+			"type": "text"
+		},
+		{
+			"name": "标题",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "作者",
+			"value": "[[{{selector:.course-title}}]]",
+			"type": "multitext"
+		},
+		{
+			"name": "发布时间",
+			"value": "{{published}}",
+			"type": "date"
+		},
+		{
+			"name": "创建时间",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "摘要",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "",
+			"type": "multitext"
+		}
+	],
+	"triggers": [],
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings"
+}
